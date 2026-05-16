@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cisco-aci-mcp"
+version = "0.1.0"
+description = "MCP server for Cisco ACI fabric health monitoring"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+]
+
+[project.scripts]
+cisco-aci-mcp = "cisco_aci_mcp.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cisco_aci_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/"]
